@@ -8,7 +8,7 @@
 
 # 多线程BIO示例
 
-没连接一个客户端，服务端启动一个线程处理，在等待客户端连接处是阻塞的，即accept方法是阻塞的
+每连接一个客户端，服务端启动一个线程处理，在等待客户端连接处是阻塞的，即accept方法是阻塞的
 
 ```java
 package com.jolan.bio;
@@ -3157,7 +3157,7 @@ public class MyClientHandler extends SimpleChannelInboundHandler<Long> {
 
 ## ReplayingDecoder
 
-public abstract class ReplayingDecoder<S> extends ByteToMessageDecoder
+public abstract class ReplayingDecoder< S > extends ByteToMessageDecoder
 
 ReplayingDecoder扩展了ByteToMessageDecoder，使用这个类不必再调用readableBytes()方法判断数据是否够读取，参数S指定用户状态管理的类型，Void表示不需要状态管理。
 
